@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="login.css">
+    <title>Login Page</title>
+</head>
+<body>
+    <div>
+    <div class="container" id="main">
+        <img src="/Images/sriher.png" alt="SRIHER Logo" class="SRETlogo">
+
+        <div class="card show" id="studentCard">
+            <h1>Student Login</h1>
+            <div class="input-fields">
+                <input autocomplete="off" type="text" id="studentUsername" placeholder="username">
+                <input type="password" id="studentPassword" placeholder="password">
+            </div>
+            <button class="login-button" onclick="saveData()">Login</button>
+            <div class="google-authentication">
+                <button class="google-button"></button>
+            </div>
+        </div>
+        
+        <div class="card hide" id="adminCard">
+            <h1>Admin Login</h1>
+            <div class="input-fields">
+                <input autocomplete="off" type="text" id="adminUsername" placeholder="username">
+                <input type="password" id="adminPassword" placeholder="password">
+            </div>
+            <button class="login-button" onclick="saveData()">Login</button>
+        </div>
+        
+
+        <div class="selector">
+            <a class="toggle-a student active" onclick="selectCard('student')">Student</a>
+            <span class="middle-line">&#124;</span>
+            <a class="toggle-a admin" onclick="selectCard('admin')">Admin</a>
+            <span class="bg" id="selectorBg"></span>
+        </div>
+    </div>
+
+    <div class="info">
+        <p>Username: <span id="displayUsername"></span></p>
+        <p>Password: <span id="displayPassword"></span></p>
+    </div>
+</div>
+    <script src="login.js"></script>
+</body>
+</html>

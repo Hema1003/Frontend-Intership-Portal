@@ -1,0 +1,180 @@
+<html>
+<head>
+    <title>buttons</title>
+    <style>
+        .sub-button {
+            background-color: rgb(200, 0, 0);
+            color: white;
+            border: none;
+            padding-left: 16px;
+            padding-right: 16px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            border-radius: 2px;
+            cursor: pointer;
+            margin-right: 8px;
+            transition: opacity 1s, color 1s;
+            vertical-align: top;
+        }
+        .sub-button:hover {
+            opacity: 0.5;
+        }
+        .sub-button:active {
+            background-color: rgb(126, 175, 219);
+        }
+        .join-button {
+            background-color: white;
+            border-color: rgb(62, 144, 215);
+            color: rgb(62, 144, 215);
+            height: 35px;
+            width: 85px;
+            border-radius: 2px;
+            border-style: solid;
+            border-width: 1px;
+            cursor: pointer;
+        }
+        .join-button:hover {
+            background-color: rgb(38, 137, 224);
+            color: rgb(8, 10, 10);
+        }
+        .join-button:active {
+            opacity: 0.5;
+        }
+        .tweet-button {
+            background-color: rgb(2, 157, 255);
+            border-radius: 18px;
+            width: 74px;
+            height: 35px;
+            color: white;
+            margin-left: 8px;
+            border-color: rgb(2, 157, 255);
+            border-width: 3px;
+            font-weight: bold;
+            font-size: 15px;
+            cursor: pointer;
+            transition: box-shadow 1s;
+        }
+        .tweet-button:hover {
+            box-shadow: 5px 5px 10px rgba(102, 184, 232, 0.7);
+        }
+        
+        .wrapper {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            background-size: contain;
+            background-repeat: no-repeat;
+            
+            
+        }
+
+        .inner {
+            --w: 100px;
+            --h: 150px;
+            --translateZ: calc((var(--w) + var(--h)) + 200px);
+            --rotateX: -15deg;
+            --perspective: 1000px;
+            position: absolute;
+            width: var(--w);
+            height: var(--h);
+            top: 25%;
+            left: calc(50% - (var(--w) / 2) - 2.5px);
+            z-index: 2;
+            transform-style: preserve-3d;
+            transform: perspective(var(--perspective));
+            animation: rotating 20s linear infinite;
+            transform:translateY(400px);
+            
+        }
+
+        @keyframes rotating {
+            from {
+                transform: perspective(var(--perspective)) rotateX(var(--rotateX)) rotateY(0);
+            }
+            to {
+                transform: perspective(var(--perspective)) rotateX(var(--rotateX)) rotateY(1turn);
+            }
+        }
+
+        .card {
+            position: absolute;
+            border-radius: 12px;
+            overflow: hidden;
+            inset: 0;
+            transform: rotateY(calc((360deg / var(--quantity)) * var(--index))) translateZ(var(--translateZ));
+        }
+
+        /* Update the .img class to make the images smaller */
+        .img {
+            width: 80%; /* You can adjust this percentage to fit your design */
+            height: auto;
+            object-fit: cover; /* Ensures the image covers the card without distortion */
+            margin: 0 auto; /* Centers the image inside the card */
+            transform: scale(0.8); /* Optional: Scales down the image slightly */
+        }
+        .card_text{
+            background-color: #f6f6f6;
+            width: 500px;
+            text-align: center;
+            z-index: 5;
+            transform: translateX(450px) translateY(100px);
+            position: absolute;
+            border-radius: 10px;
+            padding: 10px;
+            box-shadow: #c3bdbd 4px 5px 10px, #c3bdbd -4px 0px 10px;
+        }
+        
+
+    </style>
+</head>
+<body>
+    <button class="sub-button">SUBSCRIBE</button>
+    <button class="join-button">JOIN</button>
+    <button class="tweet-button">Tweet</button>
+
+    <!-- Rotating Card Wrapper -->
+     <div class="card_text">
+        <p class="text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Porro, quo dolor a laborum dolores consectetur recusandae? Animi sint corporis ullam laboriosam non ex, perspiciatis, provident omnis consequatur ad porro labore!</p>
+     </div>
+    <div class="wrapper">
+        <div class="inner" style="--quantity: 10;">
+            <div class="card" style="--index: 0;">
+                <img class="img" src="html_bw.png" alt="Image 1">
+            </div>
+            <div class="card" style="--index: 1;">
+                <img class="img" src="image2.jpg" alt="Image 2">
+            </div>
+            <div class="card" style="--index: 2;">
+                <img class="img" src="java_bw.png" alt="Image 3">
+            </div>
+            <div class="card" style="--index: 3;">
+                <img class="img" src="image4.jpg" alt="Image 4">
+            </div>
+            <div class="card" style="--index: 4;">
+                <img class="img" src="mysql_bw.png" alt="Image 5">
+            </div>
+            <div class="card" style="--index: 5;">
+                <img class="img" src="image6.jpg" alt="Image 6">
+            </div>
+            <div class="card" style="--index: 6;">
+                <img class="img" src="python_bw.png" alt="Image 7">
+            </div>
+            <div class="card" style="--index: 7;">
+                <img class="img" src="image8.jpg" alt="Image 8">
+            </div>
+            <div class="card" style="--index: 8;">
+                <img class="img" src="react_bw.png" alt="Image 9">
+            </div>
+            <div class="card" style="--index: 9;">
+                <img class="img" src="image10.jpg" alt="Image 10">
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+

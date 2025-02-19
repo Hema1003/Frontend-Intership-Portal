@@ -1,0 +1,73 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0; /* Light gray background */
+    display: flex;
+    height: 100vh;  /* Full viewport height */
+}
+
+.navigationBar {
+    display: flex;
+    flex-direction: column; /* Align items vertically */
+    justify-content: flex-start;  /* Align items to the top */
+    align-items: flex-start; /* Align items to the left */
+    width: 200px; /* Fixed width for the sidebar */
+    background-color: #333; /* Dark background for the navbar */
+    padding: 20px;
+    position: fixed; /* Fix the navbar to the left side */
+    height: 100%; /* Full height of the screen */
+}
+ 
+.menu-button {
+    padding: 10px 20px;
+    background-color: #da0d0d;  /* Button background color */
+    border: none;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+.menu-button:hover {
+    background-color: #b43b3b; /* Darker shade for hover effect */
+}
+
+.home-button {
+    width: 100%;  /* Full width to fit the sidebar */
+    padding: 0;    /* Remove internal padding */
+    display: flex;
+    flex-direction: column; /* Stack the buttons vertically */
+    gap: 10px;
+}
+
+.home-button div {
+    display: flex;
+    flex-direction: column; /* Stack the buttons vertically */
+}
+
+.home-button button {
+    padding: 10px;
+    background-color: #7d97d5;
+    border: none;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    margin: 5px 0;  /* Space between buttons */
+}
+
+.home-button button:hover {
+    background-color: #b43b3b;
+}
+
+/* Add margin-left to the content so it doesn't overlap with the sidebar */
+.main-content {
+    margin-left: 220px; /* Ensure content starts after the sidebar */
+    flex: 1;
+    padding: 20px;
+}
